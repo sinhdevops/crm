@@ -181,12 +181,12 @@ export default function Activities() {
         onToggleEmpty={() => setShowEmpty((v) => !v)}
       />
 
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto bg-[#F8F8F7]">
         <div
-          className="flex flex-col gap-4 p-4 items-stretch mx-auto lg:flex-row lg:gap-6 lg:p-6 lg:items-start"
+          className="mx-auto flex flex-col gap-4 p-3 sm:p-4 lg:flex-row lg:items-start lg:gap-6 lg:p-6"
           style={{ maxWidth: 1400 }}
         >
-          <div className="min-w-0 lg:flex-[65_1_0%]">
+          <div className="order-2 min-w-0 lg:order-1 lg:flex-[65_1_0%]">
             {isLoading ? (
               <TimelineSkeleton />
             ) : (
@@ -220,7 +220,7 @@ export default function Activities() {
           </div>
 
           <div
-            className="min-w-0 lg:flex-[35_1_0%] lg:min-w-[260px] lg:max-w-[320px]"
+            className="order-1 min-w-0 lg:order-2 lg:flex-[35_1_0%] lg:min-w-[260px] lg:max-w-[320px]"
           >
             <div className="lg:sticky lg:top-6">
               <SummaryPanel activities={allActivities} isLoading={isLoading} />

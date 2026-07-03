@@ -30,7 +30,7 @@ function FilterPill({
     <button
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-colors cursor-pointer",
+        "inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full border px-4 py-2 transition-colors cursor-pointer sm:min-h-8 sm:px-3 sm:py-1.5",
         active
           ? "bg-primary text-white border-primary"
           : "bg-background text-muted-foreground border-border hover:border-primary/40 hover:text-foreground",
@@ -46,7 +46,7 @@ function FilterPill({
 function DropdownBtn({ label }: { label: string }) {
   return (
     <button
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground transition-colors cursor-pointer"
+      className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-xl border border-border bg-background px-3.5 py-2 text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground sm:min-h-8 sm:rounded-lg sm:px-3 sm:py-1.5"
       style={{ fontSize: 12 }}
     >
       {label}
@@ -80,7 +80,7 @@ export function ActivitiesFilters({
 
   return (
     <div className="shrink-0 border-b bg-background px-4 py-3 space-y-2.5 sm:px-6">
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+      <div className="no-scrollbar -mx-4 flex snap-x items-center gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
         {filterPills.map((pill) => (
           <FilterPill
             key={pill.key}
@@ -93,7 +93,7 @@ export function ActivitiesFilters({
 
         <button
           onClick={onToggleEmpty}
-          className="ml-auto inline-flex shrink-0 items-center gap-1 px-2.5 py-1 rounded-full border border-dashed border-border text-muted-foreground hover:text-foreground transition-colors cursor-pointer bg-transparent"
+          className="ml-auto hidden shrink-0 items-center gap-1 rounded-full border border-dashed border-border bg-transparent px-2.5 py-1 text-muted-foreground transition-colors hover:text-foreground sm:inline-flex"
           style={{ fontSize: 11 }}
           title="Toggle empty state (dev)"
         >
@@ -102,7 +102,7 @@ export function ActivitiesFilters({
         </button>
       </div>
 
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+      <div className="no-scrollbar -mx-4 flex snap-x items-center gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
         <DropdownBtn label="Tất cả nhân viên" />
         <DropdownBtn label="Tất cả liên hệ" />
         <DropdownBtn label="7 ngày qua" />

@@ -150,10 +150,10 @@ export function SummaryPanel({ activities, isLoading }: SummaryPanelProps) {
 
   // ── Render ──────────────────────────────────────────────────────────────
   return (
-    <div className="flex flex-col gap-3">
+    <div className="no-scrollbar -mx-3 flex snap-x gap-3 overflow-x-auto px-3 pb-1 sm:-mx-4 sm:px-4 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
       {/* ── Tổng quan theo type ── */}
       <div
-        className="bg-white rounded-xl border p-4"
+        className="min-w-[82vw] snap-start rounded-xl border bg-white p-4 shadow-sm shadow-black/[0.02] sm:min-w-[360px] lg:min-w-0"
         style={{ borderColor: "#E8E7E2", borderWidth: "0.5px" }}
       >
         <p
@@ -205,7 +205,7 @@ export function SummaryPanel({ activities, isLoading }: SummaryPanelProps) {
 
       {/* ── Top nhân viên ── */}
       <div
-        className="bg-white rounded-xl border p-4"
+        className="min-w-[82vw] snap-start rounded-xl border bg-white p-4 shadow-sm shadow-black/[0.02] sm:min-w-[360px] lg:min-w-0"
         style={{ borderColor: "#E8E7E2", borderWidth: "0.5px" }}
       >
         <p

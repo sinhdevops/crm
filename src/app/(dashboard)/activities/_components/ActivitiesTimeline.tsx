@@ -20,7 +20,7 @@ export function ActivitiesTimeline({
 }) {
   return showEmpty || groups.length === 0 ? (
     <div
-      className="bg-white rounded-xl border"
+      className="rounded-xl border bg-white shadow-sm shadow-black/[0.02]"
       style={{ borderColor: "#E8E7E2", borderWidth: "0.5px" }}
     >
       <EmptyState />
@@ -30,7 +30,7 @@ export function ActivitiesTimeline({
       {groups.map((group) => (
         <div key={group.date}>
           <DateDivider label={group.dateLabel} />
-          <div className="space-y-3">
+          <div className="space-y-2.5 sm:space-y-3">
             {group.items.map((activity) => (
               <ActivityCard
                 key={activity.id}

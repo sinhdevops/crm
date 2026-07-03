@@ -227,11 +227,11 @@ export function RealtimeNotifications() {
             Khi có {Object.values(tableLabels).join(", ")} bạn sẽ nhận thông báo trên điện thoại.
           </p>
           <div className="mt-3 flex gap-2">
-            <Button type="button" size="sm" className="h-8 gap-1.5 text-xs" onClick={enableNotifications}>
+            <Button type="button" size="md" className="text-xs sm:h-8 sm:rounded-lg sm:px-3" onClick={enableNotifications}>
               <Bell size={13} />
               Bật thông báo
             </Button>
-            <Button type="button" size="sm" variant="ghost" className="h-8 text-xs" onClick={dismissPrompt}>
+            <Button type="button" size="md" variant="ghost" className="text-xs sm:h-8 sm:rounded-lg sm:px-3" onClick={dismissPrompt}>
               Để sau
             </Button>
           </div>

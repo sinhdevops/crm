@@ -92,7 +92,7 @@ export function ActivityCard({
 
   return (
     <div
-      className="bg-white rounded-xl border p-3 hover:shadow-sm transition-shadow"
+      className="rounded-xl border bg-white p-3 shadow-sm shadow-black/[0.02] transition-shadow hover:shadow-sm sm:p-4"
       style={{ borderColor: "#E8E7E2", borderWidth: "0.5px" }}
     >
       <div className="flex gap-3">
@@ -106,7 +106,7 @@ export function ActivityCard({
 
         <div className="flex-1 min-w-0">
           {/* Header row: badge + date + menu */}
-          <div className="flex items-center justify-between gap-2 mb-1">
+          <div className="mb-1 flex items-start justify-between gap-2">
             <span
               className="inline-flex items-center rounded-full px-2 py-0.5"
               style={{
@@ -118,8 +118,8 @@ export function ActivityCard({
             >
               {meta.label}
             </span>
-            <div className="flex items-center gap-2">
-              <span className="text-muted-foreground" style={{ fontSize: 11 }}>
+            <div className="flex shrink-0 items-center gap-1.5">
+              <span className="max-w-[112px] truncate text-muted-foreground sm:max-w-none" style={{ fontSize: 11 }}>
                 {formattedDate}
               </span>
 
@@ -210,14 +210,14 @@ export function ActivityCard({
 
           {/* Note với expand/collapse — threshold 120 chars (req 13.1) */}
           <p
-            className="text-muted-foreground mb-2"
+            className="text-muted-foreground mb-2 break-words"
             style={{ fontSize: 12, lineHeight: 1.55 }}
           >
             {displayNote}
             {isLong && (
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="text-primary ml-1 bg-transparent border-0 cursor-pointer p-0"
+                className="ml-1 border-0 bg-transparent p-0 text-primary cursor-pointer"
                 style={{ fontSize: 12, fontWeight: 500 }}
               >
                 {expanded ? "Thu gọn" : "Xem thêm →"}
@@ -247,7 +247,7 @@ export function ActivityCard({
                 className="shrink-0 text-primary bg-transparent border-0 cursor-pointer whitespace-nowrap"
                 style={{ fontSize: 11, fontWeight: 500 }}
               >
-                Xem â†’
+                Xem →
               </button>
             </div>
           )}

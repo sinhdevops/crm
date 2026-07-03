@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function EmptyState() {
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-8 text-center">
+    <div className="flex flex-col items-center justify-center px-6 py-10 text-center sm:px-8 sm:py-16">
       <svg
         width="80"
         height="80"
@@ -33,10 +33,10 @@ export function EmptyState() {
       >
         Chưa có hoạt động nào
       </p>
-      <p className="text-muted-foreground mb-5" style={{ fontSize: 13 }}>
+      <p className="text-muted-foreground mb-5 max-w-[260px]" style={{ fontSize: 13 }}>
         Bắt đầu log hoạt động đầu tiên với khách hàng của bạn
       </p>
-      <Button size="sm" className="gap-1.5" style={{ fontSize: 13 }}>
+      <Button size="md" style={{ fontSize: 13 }}>
         <Plus size={13} />
         Thêm hoạt động
       </Button>

@@ -213,8 +213,8 @@ function LogActivityForm({ onSubmit, isPending, entityType = "contact" }: LogAct
 
           <Button
             type="submit"
-            size="sm"
-            className="h-8 w-full gap-1.5 text-xs sm:h-7 sm:w-auto"
+            size="md"
+            className="w-full text-xs sm:h-7 sm:w-auto sm:rounded-lg sm:px-2.5"
             disabled={!note?.trim() || isPending}
           >
             <Send size={11} />
