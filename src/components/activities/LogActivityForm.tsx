@@ -93,10 +93,10 @@ function LogActivityForm({ onSubmit, isPending, entityType = "contact" }: LogAct
   };
 
   return (
-    <div className="mx-6 mt-5 mb-0 bg-background rounded-xl border border-border overflow-hidden shrink-0">
+    <div className="mx-4 mt-4 mb-0 shrink-0 overflow-hidden rounded-xl border border-border bg-background sm:mx-6 sm:mt-5">
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         {/* Tab selector */}
-        <div className="flex border-b border-border">
+        <div className="grid grid-cols-2 border-b border-border sm:flex">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.key;
@@ -106,7 +106,7 @@ function LogActivityForm({ onSubmit, isPending, entityType = "contact" }: LogAct
                 key={tab.key}
                 onClick={() => handleTabChange(tab.key)}
                 className={cn(
-                  "flex-1 flex items-center justify-center gap-1 py-2.5 border-0 cursor-pointer transition-all",
+                  "flex min-w-0 flex-1 items-center justify-center gap-1 py-2.5 border-0 cursor-pointer transition-all",
                   "-mb-px border-b-2",
                   isActive
                     ? "bg-secondary/40 text-primary border-b-primary"
@@ -145,7 +145,7 @@ function LogActivityForm({ onSubmit, isPending, entityType = "contact" }: LogAct
         </div>
 
         {/* Form footer */}
-        <div className="flex items-center justify-between px-3.5 py-2 border-t border-border">
+        <div className="flex flex-col gap-2 border-t border-border px-3.5 py-2 sm:flex-row sm:items-center sm:justify-between">
           <Popover>
             <PopoverTrigger asChild>
               <button
@@ -214,7 +214,7 @@ function LogActivityForm({ onSubmit, isPending, entityType = "contact" }: LogAct
           <Button
             type="submit"
             size="sm"
-            className="h-7 gap-1.5 text-xs"
+            className="h-8 w-full gap-1.5 text-xs sm:h-7 sm:w-auto"
             disabled={!note?.trim() || isPending}
           >
             <Send size={11} />

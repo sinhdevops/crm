@@ -83,17 +83,17 @@ function InviteModal({ open, onClose }: { open: boolean; onClose: () => void }) 
 
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
-      <DialogContent className="sm:max-w-[480px] p-0 gap-0 rounded-[10px] overflow-hidden" aria-describedby={undefined}>
+      <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto p-0 gap-0 rounded-[10px] sm:max-w-[480px]" aria-describedby={undefined}>
 
         {/* Header */}
-        <DialogHeader className="px-6 pt-6 pb-4 border-b border-[#E8E7E2]">
+        <DialogHeader className="px-4 pt-5 pb-4 border-b border-[#E8E7E2] sm:px-6 sm:pt-6">
           <DialogTitle className="text-[#1A1A18]" style={{ fontSize: 16, fontWeight: 600 }}>
             Mời thành viên mới
           </DialogTitle>
         </DialogHeader>
 
         {/* Body */}
-        <div className="px-6 py-5 flex flex-col gap-4">
+        <div className="px-4 py-5 flex flex-col gap-4 sm:px-6">
 
           {/* Email */}
           <div className="flex flex-col gap-1.5">
@@ -196,16 +196,16 @@ function InviteModal({ open, onClose }: { open: boolean; onClose: () => void }) 
         </div>
 
         {/* Footer */}
-        <DialogFooter className="px-6 pb-6 flex-row items-center justify-between gap-0">
+        <DialogFooter className="px-4 pb-5 flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:pb-6">
           <p className="flex items-center gap-1.5 text-[#6B6B67]" style={{ fontSize: 12 }}>
             <Info size={12} />
             Lời mời có hiệu lực trong 7 ngày.
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col-reverse gap-2 sm:flex-row sm:items-center">
             <Button
               variant="outline"
               onClick={onClose}
-              className="h-9 rounded-[10px] border-[#E8E7E2] text-[#6B6B67] hover:bg-[#F8F8F7] hover:text-[#1A1A18]"
+              className="h-9 w-full rounded-[10px] border-[#E8E7E2] text-[#6B6B67] hover:bg-[#F8F8F7] hover:text-[#1A1A18] sm:w-auto"
               style={{ fontSize: 13 }}
             >
               Hủy
@@ -213,7 +213,7 @@ function InviteModal({ open, onClose }: { open: boolean; onClose: () => void }) 
             <Button
               onClick={handleSend}
               disabled={createMutation.isPending}
-              className="h-9 rounded-[10px] bg-[#534AB7] hover:bg-[#4840A0] text-white"
+              className="h-9 w-full rounded-[10px] bg-[#534AB7] hover:bg-[#4840A0] text-white sm:w-auto"
               style={{ fontSize: 13 }}
             >
               {createMutation.isPending ? "Đang gửi..." : "Gửi lời mời"}

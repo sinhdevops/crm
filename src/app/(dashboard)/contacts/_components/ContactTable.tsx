@@ -10,7 +10,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Eye, Pencil, Plus, Users } from "lucide-react";
+import { Eye, EyeOff, Pencil, Plus, Users } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../../../../components/ui/button";
 import { getInitials, relativeTime } from "@/lib/helper";
@@ -57,6 +57,12 @@ const customerTypes = ["Khách mới", "Đang tư vấn", "Đã mua hàng", "Ti�
 function formatDate(value?: string) {
   if (!value) return "-";
   return new Date(value).toLocaleDateString("vi-VN");
+}
+
+function maskPhone(phone?: string | null) {
+  if (!phone) return "-";
+  const lastFourDigits = phone.slice(-4);
+  return `••••••${lastFourDigits}`;
 }
 
 function ContactTableSkeleton() {
@@ -273,6 +279,7 @@ function ContactTable({
   fetchNextPage,
 }: ContactTableProps) {
   const observerTarget = useRef<HTMLDivElement>(null);
+  const [showPhones, setShowPhones] = useState(false);
   const updateContact = useUpdateContact();
 
   const handleCustomerTypeChange = (contact: GetContactWithDealsActivitiesResType, customerType: string) => {
@@ -330,7 +337,23 @@ function ContactTable({
                       letterSpacing: "0.04em",
                     }}
                   >
-                    {col}
+                    {idx === 1 ? (
+                      <div className="flex items-center gap-1.5">
+                        <span>{col}</span>
+                        <button
+                          type="button"
+                          className="inline-flex size-5 items-center justify-center rounded-md border-0 bg-transparent p-0 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                          title={showPhones ? "Ẩn số điện thoại" : "Hiện số điện thoại"}
+                          aria-label={showPhones ? "Ẩn số điện thoại" : "Hiện số điện thoại"}
+                          aria-pressed={showPhones}
+                          onClick={() => setShowPhones((value) => !value)}
+                        >
+                          {showPhones ? <EyeOff size={13} /> : <Eye size={13} />}
+                        </button>
+                      </div>
+                    ) : (
+                      col
+                    )}
                   </TableHead>
                 ))}
               </TableRow>
@@ -398,7 +421,7 @@ function ContactTable({
                     className="px-4 py-3 text-muted-foreground whitespace-nowrap"
                     style={{ fontSize: 12 }}
                   >
-                    {contact.phone || "-"}
+                    {showPhones ? contact.phone || "-" : maskPhone(contact.phone)}
                   </TableCell>
 
                   <TableCell

@@ -153,7 +153,7 @@ export function AppSidebar() {
         </div>
       </SidebarFooter>
     </Sidebar>
-    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-2 pb-[env(safe-area-inset-bottom)] shadow-[0_-6px_18px_rgba(0,0,0,0.04)] backdrop-blur md:hidden">
+    <nav className="fixed inset-x-0 bottom-0 z-[100] transform-gpu border-t border-border bg-background/95 px-2 pb-[env(safe-area-inset-bottom)] shadow-[0_-6px_18px_rgba(0,0,0,0.04)] backdrop-blur md:hidden">
       <div className="mx-auto grid max-w-md grid-cols-5 gap-1 py-1.5">
         {navItems.slice(0, 5).map((item) => {
           const Icon = item.icon;

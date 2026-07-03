@@ -44,7 +44,7 @@ export function PipelineClient({ initialPipeline }: PipelineClientProps) {
     periodOptions.find((option) => option.value === selectedPeriod)?.label ?? "Tất cả";
 
   return (
-    <div className="flex h-full flex-col flex-1 min-w-0 overflow-hidden">
+    <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
       <header className="shrink-0 border-b bg-background flex flex-col items-start justify-between gap-3 px-4 py-3 lg:flex-row lg:items-center lg:px-6">
         <div className="flex w-full items-center justify-between gap-3 lg:w-auto lg:justify-start">
           <h1

@@ -74,7 +74,7 @@ export default function ReportsPage() {
   });
 
   return (
-    <div className="flex flex-col flex-1 min-w-0 overflow-hidden bg-[#F8F8F7]">
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden bg-[#F8F8F7]">
 
       {/* ── Top bar ─────────────────────────────────────────────────────────── */}
       <header

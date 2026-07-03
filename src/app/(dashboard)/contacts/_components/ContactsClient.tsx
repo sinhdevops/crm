@@ -101,8 +101,8 @@ export function ContactsClient({ initialPage }: ContactsClientProps) {
 
   return (
     <>
-      <div className="flex h-[100dvh]">
-        <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+      <div className="flex h-full min-h-0">
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
           <header className="shrink-0 border-b bg-background px-4 py-3 sm:px-6">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <h1

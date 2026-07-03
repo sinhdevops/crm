@@ -168,7 +168,7 @@ export default function Activities() {
 
   // ── Render ────────────────────────────────────────────────────────────────
   return (
-    <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
       <ActivitiesHeader
         dateRangeLabel="Tất cả"
         onNewActivity={handleOpenCreate}

@@ -514,7 +514,7 @@ export default async function TodayPage() {
   const scheduleRows = [...overdue, ...today, ...week, ...month];
 
   return (
-    <div className="flex min-w-0 flex-1 flex-col overflow-hidden bg-[#F8F8F7]">
+    <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden bg-[#F8F8F7]">
       <header className="flex shrink-0 flex-col items-start justify-between gap-4 px-4 pb-3 pt-4 sm:flex-row sm:px-7 sm:pt-6">
         <div>
           <h1 className="text-foreground tracking-tight" style={{ fontSize: 22, fontWeight: 800 }}>

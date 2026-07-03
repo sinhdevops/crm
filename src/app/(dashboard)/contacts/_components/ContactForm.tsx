@@ -299,11 +299,11 @@ function ContactForm({ onSubmit, isPending, defaultValues }: ContactFormProps) {
         )} />
       </FieldGroup>
 
-      <Field orientation="horizontal" className="justify-end pt-4">
-        <Button type="button" variant="outline" onClick={() => form.reset()}>
+      <Field orientation="horizontal" className="flex-col-reverse justify-end gap-2 pt-4 sm:flex-row">
+        <Button type="button" variant="outline" className="w-full sm:w-auto" onClick={() => form.reset()}>
           Reset
         </Button>
-        <Button type="submit" form="form-rhf-contact" disabled={isPending}>
+        <Button type="submit" form="form-rhf-contact" className="w-full sm:w-auto" disabled={isPending}>
           {isPending ? "Đang xử lý..." : "Lưu"}
         </Button>
       </Field>

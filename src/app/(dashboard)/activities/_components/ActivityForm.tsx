@@ -186,7 +186,7 @@ export function ActivityForm({
   // ── Render ──────────────────────────────────────────────────────────────
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-md">
         <DialogHeader>
           <DialogTitle style={{ fontSize: 15 }}>
             {isEditMode ? "Chỉnh sửa hoạt động" : "Thêm hoạt động mới"}
@@ -310,11 +310,12 @@ export function ActivityForm({
               )}
             />
 
-            <DialogFooter className="mt-2">
+            <DialogFooter className="mt-2 flex-col-reverse gap-2 sm:flex-row">
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
+                className="w-full sm:w-auto"
                 onClick={() => onOpenChange(false)}
                 disabled={isPending}
                 style={{ fontSize: 12 }}
@@ -324,6 +325,7 @@ export function ActivityForm({
               <Button
                 type="submit"
                 size="sm"
+                className="w-full sm:w-auto"
                 disabled={isPending}
                 style={{ fontSize: 12 }}
               >
